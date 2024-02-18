@@ -1,0 +1,50 @@
+<nav class="navbar navbar-dark bg-primary">  
+<h1 class="text-light   text-center" >JOB QUERY</h1>
+<button class="btn btn-info  text-light " type="submit" (click)="logout()">logout</button>
+<div  class="col-md-8 mt2">
+  <form class="d-flex" [formGroup]="queryUserForm">
+    <label class="fs-6  text-light align-middle">Category:</label>
+      <select class="form-select" formControlName="category" >
+        <option selected value="all">all</option>
+        <option value="FrontEnd">FrontEnd</option>
+        <option value="BackEnd">BackEnd</option>
+        <option value="FullStack">FullStack</option>        
+    </select>    
+    <button class="btn btn btn-primary" type="submit" (click)="print()">Search</button>
+    
+  </form>
+</div>
+</nav>
+<p></p>
+<p></p>
+<div class=" mt2">
+    <h5 class="text-primary  text-center" >Job List</h5>
+    <div class="card p-3 shadow">
+        <div class="card-bd">
+            <table class="table table-hover">
+                <thead>
+                  <tr class="table-primary">
+                    <th scope="col">Category</th>
+                    <th scope="col">CompanyName</th>
+                    <th scope="col">JobTitle</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">ApplyStartDate</th>
+                    <th scope="col">ApplyEndDate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of jobList">
+                    <td>{{item.category}}</td>
+                    <td>{{item.companyName}}</td>
+                    <td>{{item.jobTitle}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.salary}}</td>
+                    <td>{{item.applyStart}}</td>
+                    <td>{{item.applyEnd}}</td>
+                  </tr>
+                 </tbody>
+              </table>
+        </div>
+    </div>
+</div>

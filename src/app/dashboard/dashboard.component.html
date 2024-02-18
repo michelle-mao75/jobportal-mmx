@@ -1,0 +1,12 @@
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid d-flex flex-row ">
+        <h1 class="text-light">Admin Dashboard</h1>
+        
+            <a routerLink="/dashboard/addjob" class="nav-link text-light fs-5"> Add Job </a>  |
+            <a routerLink="/dashboard/managejob" class="nav-link text-light fs-5"> Manage Job</a>  |
+            <button type="button" class="btn" (click)="logout()" ><h5>logout</h5></button>
+        
+        
+    </div>
+ </nav>
+ <router-outlet></router-outlet>

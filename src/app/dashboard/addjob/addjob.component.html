@@ -1,0 +1,74 @@
+<div class="card">
+    <div class ="dialog">
+        <div class="col-md mt-5">
+            <div class="card border-0 shadow p-3">
+                <div class="form-floating mb-3 text-center">
+                   <h5 class="text-center text-primary">Add Job</h5>
+                 </div>
+                 <form [formGroup]="addjobForm" >
+                    <label for="category">Category</label>
+                    <div class="form-floating mb-3">                        
+                        <select class="form-select" formControlName="category" name="category" >
+                            <option value="FrontEnd" selected>FrontEnd</option>
+                            <option value="BackEnd">BackEnd</option>
+                            <option value="FullStack">FullStack</option>
+                        </select>
+                    </div>
+                    <div class="text-danger" *ngIf="Category.touched &&Category.invalid && Category.errors">
+                        <div *ngIf="Category.errors['required']">Please choose category.</div>
+                        <div *ngIf="Category.errors['minlength']">The minimum length of category is 3.</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" formControlName="companyName" name="companyName">
+                        <label for="companyName">CompanyName</label>
+                    </div>
+                    <div class="text-danger" *ngIf="CompanyName.touched &&CompanyName.invalid && CompanyName.errors">
+                        <div *ngIf="CompanyName.errors['required']">Please fill company name.</div>
+                        <div *ngIf="CompanyName.errors['minlength']">The minimum length of company name is 3.</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" formControlName="jobTitle" name="jobTitle" >
+                        <label for="jobTitle">JobTitle</label>
+                    </div>
+                    <div class="text-danger" *ngIf="JobTitle.touched &&JobTitle.invalid && JobTitle.errors">
+                        <div *ngIf="JobTitle.errors['required']">Please fill job title.</div>
+                        <div *ngIf="JobTitle.errors['minlength']">The minimum length of job title is 3.</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="textarea"  rows="4" class="form-control" formControlName="description" name="description">
+                        <label for="description">Description</label>
+                    </div>
+                    <div class="text-danger" *ngIf="Description.touched &&Description.invalid && Description.errors">
+                        <div *ngIf="Description.errors['required']">Please fill job description.</div>
+                        <div *ngIf="Description.errors['minlength']">The minimum length of job description is 3.</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" formControlName="salary" name="salary" >
+                        <label for="salary">Salary</label>
+                    </div>
+                    <div class="text-danger" *ngIf="Salary.touched &&Salary.invalid && Salary.errors">
+                        <div *ngIf="Salary.errors['required']">Please fill salary.</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" formControlName="applyStart" name="applyStart">
+                        <label for="applyStart">ApplyStartDate</label>
+                    </div>
+                    <div class="text-danger" *ngIf="ApplyStart.touched &&ApplyStart.invalid && ApplyStart.errors">
+                        <div *ngIf="ApplyStart.errors['required']">Please fill job apply start date.</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" formControlName="applyEnd" name="applyEnd" >
+                        <label for="applyEnd">ApplyEndDate</label>
+                    </div>
+                    <div class="text-danger" *ngIf="ApplyEnd.touched &&ApplyEnd.invalid && ApplyEnd.errors">
+                        <div *ngIf="ApplyEnd.errors['required']">Please fill job apply end date.</div>
+                    </div>
+                    <div class="text-center">
+                        <button [disabled]="addjobForm.invalid" type="button" class="btn btn-primary" (click)="addJob()">Add Job</button>
+                        &nbsp;<button type="button" class="btn btn-info" (click)="addjobForm.reset()">reset</button>
+                    </div>
+                </form>
+             </div>
+        </div>
+    <div>
+</div>
